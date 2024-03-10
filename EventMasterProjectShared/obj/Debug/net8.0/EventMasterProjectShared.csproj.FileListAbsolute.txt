@@ -1,0 +1,11 @@
+D:\CSharp_Course\Blazor\EventMasterProject\EventMasterProjectShared\bin\Debug\net8.0\EventMasterProjectShared.deps.json
+D:\CSharp_Course\Blazor\EventMasterProject\EventMasterProjectShared\bin\Debug\net8.0\EventMasterProjectShared.dll
+D:\CSharp_Course\Blazor\EventMasterProject\EventMasterProjectShared\bin\Debug\net8.0\EventMasterProjectShared.pdb
+D:\CSharp_Course\Blazor\EventMasterProject\EventMasterProjectShared\obj\Debug\net8.0\EventMasterProjectShared.GeneratedMSBuildEditorConfig.editorconfig
+D:\CSharp_Course\Blazor\EventMasterProject\EventMasterProjectShared\obj\Debug\net8.0\EventMasterProjectShared.AssemblyInfoInputs.cache
+D:\CSharp_Course\Blazor\EventMasterProject\EventMasterProjectShared\obj\Debug\net8.0\EventMasterProjectShared.AssemblyInfo.cs
+D:\CSharp_Course\Blazor\EventMasterProject\EventMasterProjectShared\obj\Debug\net8.0\EventMasterProjectShared.csproj.CoreCompileInputs.cache
+D:\CSharp_Course\Blazor\EventMasterProject\EventMasterProjectShared\obj\Debug\net8.0\EventMasterProjectShared.dll
+D:\CSharp_Course\Blazor\EventMasterProject\EventMasterProjectShared\obj\Debug\net8.0\refint\EventMasterProjectShared.dll
+D:\CSharp_Course\Blazor\EventMasterProject\EventMasterProjectShared\obj\Debug\net8.0\EventMasterProjectShared.pdb
+D:\CSharp_Course\Blazor\EventMasterProject\EventMasterProjectShared\obj\Debug\net8.0\ref\EventMasterProjectShared.dll

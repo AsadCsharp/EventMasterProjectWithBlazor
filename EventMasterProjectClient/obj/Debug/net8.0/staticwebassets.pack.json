@@ -1,0 +1,61 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\CSharp_Course\\Blazor\\EventMasterProject\\EventMasterProjectClient\\bin\\Debug\\net8.0\\wwwroot\\_framework\\blazor.webassembly.js",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js"
+    },
+    {
+      "Id": "D:\\CSharp_Course\\Blazor\\EventMasterProject\\EventMasterProjectClient\\obj\\Debug\\net8.0\\compressed\\3t9zov6x5s.gz",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js.gz"
+    },
+    {
+      "Id": "D:\\CSharp_Course\\Blazor\\EventMasterProject\\EventMasterProjectClient\\obj\\Debug\\net8.0\\scopedcss\\bundle\\EventMasterProjectClient.styles.css",
+      "PackagePath": "staticwebassets\\EventMasterProjectClient.styles.css"
+    },
+    {
+      "Id": "D:\\CSharp_Course\\Blazor\\EventMasterProject\\EventMasterProjectClient\\wwwroot\\css\\app.css",
+      "PackagePath": "staticwebassets\\css\\app.css"
+    },
+    {
+      "Id": "D:\\CSharp_Course\\Blazor\\EventMasterProject\\EventMasterProjectClient\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\CSharp_Course\\Blazor\\EventMasterProject\\EventMasterProjectClient\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "D:\\CSharp_Course\\Blazor\\EventMasterProject\\EventMasterProjectClient\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "D:\\CSharp_Course\\Blazor\\EventMasterProject\\EventMasterProjectClient\\wwwroot\\icon-192.png",
+      "PackagePath": "staticwebassets\\icon-192.png"
+    },
+    {
+      "Id": "D:\\CSharp_Course\\Blazor\\EventMasterProject\\EventMasterProjectClient\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "D:\\CSharp_Course\\Blazor\\EventMasterProject\\EventMasterProjectClient\\wwwroot\\sample-data\\weather.json",
+      "PackagePath": "staticwebassets\\sample-data\\weather.json"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.EventMasterProjectClient.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.EventMasterProjectClient.props",
+      "PackagePath": "build\\EventMasterProjectClient.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.EventMasterProjectClient.props",
+      "PackagePath": "buildMultiTargeting\\EventMasterProjectClient.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.EventMasterProjectClient.props",
+      "PackagePath": "buildTransitive\\EventMasterProjectClient.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

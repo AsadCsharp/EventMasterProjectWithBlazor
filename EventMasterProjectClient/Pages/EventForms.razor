@@ -1,0 +1,113 @@
+﻿@using EventMasterProjectShared
+
+
+<EditForm Model="event12" OnValidSubmit="OnValidSubmit">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <InputText class="form-control" id="name" @bind-Value="@event12.Name" />
+                </div>
+                <div class="form-group">
+                    <label for="StartTime">StartTime</label>
+                    <InputDate class="form-control" id="StartTime" @bind-Value="@event12.StartTime" />
+                </div>
+                <div class="form-group">
+                    <label for="EndTime">EndTime</label>
+                    <InputDate class="form-control" id="EndTime" @bind-Value="@event12.EndTime" />
+                </div>
+                <div class="form-group">
+                    <label for="Description">Description</label>
+                    <InputText class="form-control" id="Description" @bind-Value="@event12.Description" />
+                </div>
+                <div class="form-group">
+                    <label for="Organizer">Organizer</label>
+                    <InputText class="form-control" id="Organizer" @bind-Value="@event12.Organizer" />
+                </div>
+                <div class="form-control-file my-2">
+                    @if (string.IsNullOrEmpty(event12.ImageUrl))
+                    {
+                        <img src="/images/noimg.jpg" height="80" width="80" />
+                    }
+                    else
+                    {
+                        <img src="@event12.ImageUrl" height="80" width="80" />
+                    }
+                    <InputFile OnChange="OnFileChange" class="form-control" accept="image/*" />
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-success" type="submit">
+                        @if (event12.Id == 0)
+                        {
+                            <span>Create</span>
+                        }
+                        else
+                        {
+                            <span>Update</span>
+                        }
+                    </button>
+                    <button @onclick="Clear" type="button" class="btn btn-info">Clear</button>
+                </div>
+                <div class="form-group">
+                    <br />
+                    <a href="students" class="btn btn-secondary">Back to Event List</a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <button type="button" @onclick="@(()=>event12.Addresses.Add(new Address()))">Add Address</button>
+                </div>
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Sl.</th>
+                            <th>Street</th>
+                            <th>City</th>
+                            <th>State</th>
+                            <th>Country</th>
+                            <th>ZipCode</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (int i = 0; i < event12.Addresses.Count; i++)
+                        {
+                            var index = i;
+                            var add = event12.Addresses[i];
+                            <tr>
+                                <td>@(i + 1)</td>
+                                <td><InputText class="form-control" id="name" @bind-Value="@add.Street" /></td>
+                                <td><InputText class="form-control" id="name" @bind-Value="@add.City" /></td>
+                                <td><InputText class="form-control" id="name" @bind-Value="@add.State" /></td>
+                                <td><InputText class="form-control" id="name" @bind-Value="@add.Country" /></td>
+                                <td><InputText class="form-control" id="name" @bind-Value="@add.ZipCode" /></td>
+                                <td>
+                                    <button class="btn btn-danger btn-sm" type="button" @onclick="@(()=>event12.Addresses.RemoveAt(index))">Remove</button>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</EditForm>
+
+@code {
+    [Parameter]
+    public Event event12 { get; set; }
+    [Parameter]
+    public EventCallback OnValidSubmit { get; set; }
+    async Task OnFileChange(InputFileChangeEventArgs e)
+    {
+        var format = e.File.ContentType;
+        var resizedImage = await e.File.RequestImageFileAsync(format, 1060, 1060);
+        var buffer = new byte[resizedImage.Size];
+        await resizedImage.OpenReadStream().ReadAsync(buffer);
+        event12.ImageUrl = $"data:{format};base64,{Convert.ToBase64String(buffer)}";
+    }
+    private void Clear()
+    {
+        event12 = new Event();
+    }
+}

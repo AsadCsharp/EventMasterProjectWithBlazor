@@ -1,0 +1,53 @@
+﻿@page "/events/edit/{EventId:int}"
+@inject HttpClient http;
+@inject NavigationManager manager;
+@using System.Text.Json;
+@using EventMasterProjectShared
+
+<h3>EventEdit</h3>
+@if (event01 == null)
+{
+    <div class="text-center">
+        <div class="spinner-border" role="status">
+            <span class="sr-only">Loading....</span>
+        </div>
+    </div>
+}
+else
+{
+    <div class="row">
+        <EventForms event12="event01" OnValidSubmit="OnValidSubmit"></EventForms>
+    </div>
+}
+@code {
+    [Parameter]
+    public int EventId { get; set; }
+    private Event event01;
+    protected override async Task OnInitializedAsync()
+    {
+        var response = await http.GetAsync($"api/events/{EventId}");
+        if (response.IsSuccessStatusCode)
+        {
+            event01 = JsonSerializer.Deserialize<Event>(await response.Content.ReadAsStringAsync(), new JsonSerializerOptions()
+                {
+                    PropertyNameCaseInsensitive = true
+                });
+        }
+        else
+        {
+            manager.NavigateTo("events");
+        }
+    }
+    private async Task OnValidSubmit()
+    {
+        var response = await http.PutAsJsonAsync("api/events", event01);
+        if (response.IsSuccessStatusCode)
+        {
+            manager.NavigateTo("events");
+        }
+        else
+        {
+            Console.WriteLine(await response.Content.ReadAsStreamAsync());
+        }
+    }
+}

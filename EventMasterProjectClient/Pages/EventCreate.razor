@@ -1,0 +1,28 @@
+﻿@using EventMasterProjectShared
+@page "/events/create"
+@inject HttpClient http;
+@inject NavigationManager manager;
+
+<h3>EventCreate</h3>
+<div class="row">
+    <EventForms event12="event11" OnValidSubmit="OnValidSubmit"></EventForms>
+</div>
+@code {
+    Event event11 = new Event();
+    private async Task OnValidSubmit()
+
+
+    {
+        var response = await http.PostAsJsonAsync("api/events", event11);
+        var body = await response.Content.ReadAsStringAsync();
+        if (response.IsSuccessStatusCode)
+        {
+            Console.WriteLine($"The new event id is {body}");
+            manager.NavigateTo("events");
+        }
+        else
+        {
+            Console.WriteLine($"{body}");
+        }
+    }
+}
